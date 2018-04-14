@@ -2,29 +2,28 @@
 
 <head>
     <link rel="stylesheet" href="results_style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css" />
+
 </head>
 
 <body>
 
-    <div style="text-align:center" class="container">
-        
-        <h1> Query Result </h1> 
-        <input type="button" onclick="location.href = 'index.php';" value="Back">
-        <br>
-    </div>
-    <table>
-        <tr>
-            <th> Offense Id </th>
-            <th> Type </th>
-            <th> Description </th>
-            <th> Number of Victims</th>
-            <th> Date Time</th>
-            <th> Street Address </th>
-            <th> Neighborhood </th>
-            <th> Beat </th>
-            <th> Latitude </th>
-            <th> Longitude </th>
-        </tr>
+        <div id="crimePaginated" class="crime-list">
+          <table class="table tableHover tableRowBorderedTop tableRowBorderedBottom">
+            <thead>
+            <tr>
+              <th class="txtL">Offense ID</th>
+              <th class="txtL">Type</th>
+              <th class="txtL">Description</th>
+              <th class="txtL">Number of Victims</th>
+              <th class="txtL">Datetime</th>
+              <th class="txtL">Street Address</th>
+              <th class="txtL">Neighborhood</th>
+              <th class="txtL">Beat</th>
+              <th class="txtL">Latitude</th>
+              <th class="txtL">Longitude</th>
+            </tr>
+            </thead>
         <?php
 include("config.php");
 
@@ -131,9 +130,12 @@ $num_rows = mysql_num_rows($result);
 $googlearray = array();
 
 if ($num_rows == 0) {
-    echo "<h1> No results found for query </h1>";
+    echo "<div style='text-align:center'><h1> No results found</h1>";
+    echo "<button class='btn btn-secondary btn-lg' onclick='history.go(-1);'>Back </button>";
 } else {
-    echo "<h1> Number of Results: $num_rows";
+    echo "<div style='text-align:center'><h1> Query Results: $num_rows </h1>";
+    echo "<button class='btn btn-secondary btn-lg' onclick='history.go(-1);'>Back </button>";
+
 }
 
 if(mysql_num_rows($result)>0) {
@@ -176,7 +178,7 @@ $desc_datetime = $desc.' @ '.$datetime;
             <script>
                 var locations = <?php echo json_encode($googlearray); ?>;
             </script>
-            <div id="map" style="width: 500px; height: 400px; margin: 0 auto 0 auto;"></div>
+            <div id="map" style="width: 100%; height: 400px; margin: 0 auto 0 auto;"></div>
 
             <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAA4uxcbtLPte397r8rAHzo_PKe4w5rF4M"></script>
 

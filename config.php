@@ -3,8 +3,11 @@
     <body>
 
         <?php
+        /*
 echo 'Current PHP version: ' . phpversion();
-?>
+*/
+        ?>
+
         <?php
             $host = "mysql-crimesniffers.cnurcb2fxz0x.us-east-2.rds.amazonaws.com";
             $username = "admin";

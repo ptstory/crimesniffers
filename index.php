@@ -11,18 +11,18 @@
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/resources/js/typeahead-helper.js"></script>
-    <script type="text/javascript" src="/resources/js/bootstrap3-typeahead.js"></script>
+    <script type="text/javascript" src="typeahead-helper.js"></script>
+    <script type="text/javascript" src="bootstrap3-typeahead.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/resources/css/index_style.css" />
+    <link rel="stylesheet" href="index_style.css" />
 
 </head>
 
 <body>
     <div align="center" class="container">
         <h1 style="font-family:arial;"> Atlanta Crime Sniffers</h1>
-        <img src='/resources/images/logo.png'>
+        <img src='logo.png'>
     </div>
     <br>
     <h2> Date Range </h2>

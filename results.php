@@ -1,19 +1,17 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="/resources/css/results_style.css" />
-
+    <link rel="stylesheet" href="results_style.css" />
 </head>
 
 <body>
 
     <div style="text-align:center" class="container">
         
-        <!--<h1> Query Result </h1> 
-
+        <h1> Query Result </h1> 
         <input type="button" onclick="location.href = 'index.php';" value="Back">
         <br>
-    </div>-->
+    </div>
     <table>
         <tr>
             <th> Offense Id </th>
@@ -130,8 +128,14 @@ if( (empty($smonth)) && (empty($emonth)) && (empty($street))&& (empty($neighborh
 
 $result = mysql_query($sql);
 $num_rows = mysql_num_rows($result);
-
 $googlearray = array();
+
+if ($num_rows == 0) {
+    echo "<h1> No results found for query </h1>";
+} else {
+    echo "<h1> Number of Results: $num_rows";
+}
+
 if(mysql_num_rows($result)>0) {
     while($row = mysql_fetch_assoc($result))
     {
@@ -172,7 +176,7 @@ $desc_datetime = $desc.' @ '.$datetime;
             <script>
                 var locations = <?php echo json_encode($googlearray); ?>;
             </script>
-            <div id="map" style="width: 500px; height: 400px;"></div>
+            <div id="map" style="width: 500px; height: 400px; margin: 0 auto 0 auto;"></div>
 
             <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAA4uxcbtLPte397r8rAHzo_PKe4w5rF4M"></script>
 

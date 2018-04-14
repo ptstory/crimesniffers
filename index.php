@@ -11,24 +11,24 @@
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/resources/js/typeahead-helper.js"></script>
-    <script type="text/javascript" src="/resources/js/bootstrap3-typeahead.js"></script>
+    <script type="text/javascript" src="typeahead-helper.js"></script>
+    <script type="text/javascript" src="bootstrap3-typeahead.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/resources/css/index_style.css" />
+    <link rel="stylesheet" href="index_style.css" />
 
 </head>
 
 <body>
     <div align="center" class="container">
         <h1 style="font-family:arial;"> Atlanta Crime Sniffers</h1>
-        <img src='/resources/images/logo.png'>
+        <img src='logo.png'>
     </div>
-    <br>
-    <h2> Date Range </h2>
-
-    <h3> Start Date: </h3>
+    <br>    
     <form action="results.php" class="form-control" method="post">
+    <h2> Date Range </h2>
+    <br>
+    <h3> Start Date: </h3>
         <select name="smonth">
                 <option value="">All</option>
                 <option value="01">Jan</option>
@@ -48,12 +48,8 @@
         <select name="syear">
             <option value="2017">2017</option>
         </select>
-
-
         <br>
-
         <h3> End Date: </h3>
-
         <select name="emonth">
                 <option value="">All </option>
                 <option value="01">Jan</option>
@@ -73,21 +69,19 @@
         <select name="eyear">
             <option value="2017">2017</option>
         </select>
-
+        <br>
+        <br>
         <h2> Location </h2>
-
+        <br>
         <h3>Street:</h3>
         <input type="text" name="street" size="50">
+    
         <br>
-
         <h3> Neigborhood: </h3>
 
         <div class="form-group">
             <input class="typeahead form-control" id="neighborhoods_search" type="text" autocomplete="off" placeholder="Neighborhood" name="neighborhood">
         </div>
-
-        <br>
-
         <h3> Beat: </h3>
 
         <div class="form-group">
@@ -95,7 +89,7 @@
         </div>
 
         <h2> Offense </h2>
-
+        <br>
         <h3> Crime: </h3>
 
         <select name="crime">

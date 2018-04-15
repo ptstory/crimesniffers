@@ -8,24 +8,26 @@
     <!--<script type="text/javascript" src="cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.bundle.min.js"></script>-->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
         <script type="text/javascript" src="typeahead-helper.js"></script>
         <script type="text/javascript" src="bootstrap3-typeahead.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css" />
         <link rel="stylesheet" href="index_style.css" />
     </head>
     
-    <body>
+    <body background-color: #f5f6f7>
         </br>
         <div align="center">
             <h1 style="font-family:arial;">Atlanta Crime Sniffers</h1>
-            <img src='logo.png'>
         </div>
 
-          <div class="crime-summary-box mvxl">
-          <p class="h5 txtC">
+        <div class="div-logo">
+            <img src='logo.png'>
+            <p class="h5 txtC">
             Crime Trends in 2017
           </p>
-<div class="crime-box crime-box-full-width backgroundLowlight pvl clearfix">
+        </div>
+<div class="crime-box-full-width-fixed crime-box crime-box-full-width backgroundLowlight pvl clearfix">
                           <div class="crime-box-col floatLeft txtC brs">
                 <p class="h1 mbn typeEmphasize crime-text-0">22,948</p>
                 <p class="h7 mtn typeCaps typeEmphasize">TOTAL CRIMES REPORTED</p>
@@ -62,23 +64,21 @@
                 <p class="h1 mbn typeEmphasize crime-text-5">612</p>
                 <p class="h7 mtn typeCaps typeEmphasize">Lowest Crime Beat</p>
               </div>
-           <div class="crime-box-col floatLeft txtC brs">
+           <div class="crime-box-col floatLeft txtC">
                 <p class="h1 mbn typeEmphasize crime-text-1">Monday</p>
-             <p class="h7 mtn typeCaps typeEmphasize">Day Most Likely To Be A Victim of Larceny At GSU</p>
+             <p class="h7 mtn typeCaps typeEmphasize">Day Most Likely To Be A Victim of<br /> Larceny At GSU</p>
               </div>
                       </div>
 </div>
-
         
-        </br>
-        
-        <div class="container center_div" style="margin: 0 auto; width:50%; background-color:lightblue">
-        <form action="results.php" class="form-control" method="post">
+        <!--<div class="container center_div" style="margin: 0 auto; width:50%; background-color:lightblue">-->
+        <form action="results.php" class="form-control-search" method="post">
             
             <div class="row text-center">
                 <div class="col-md-4">
-                    <h3 class="text-center"><u>Date Range</u></h3>
-                    <h5 class="text-center">Start Date:</h5>
+                    <h1 class="text-center"><u>Date Range</u></h1>
+                    <br>
+                    <h4 class="text-center">Start Date:</h4>
                     <select name="smonth">
                         <option value="">All</option>
                         <option value="01">Jan</option>
@@ -102,7 +102,7 @@
             </br>
             </br>
             
-            <h5>End Date:</h5>
+            <h4>End Date:</h4>
             <select name="emonth">
                 <option value="">All </option>
                 <option value="01">Jan</option>
@@ -118,28 +118,36 @@
                 <option value="11">Nov</option>
                 <option value="12">Dec</option>
             </select>
-            
+
             <select name="eyear">
                 <option value="2017">2017</option>
             </select>
+            <br />
+            <br />
+            <br />
+
+                <div class="text-center">
+                
+            <button class="btn btn-background btn-lg white" type="submit">Search </button>
+            </div>
             
             </div>
             <hr>
             
             <div class="col-md-4">
-            <h3><u>Location</u></h3>
+            <h1><u>Location</u></h1>
             
-            <h5>Street:</h5>
-            <input class="typeahead form-control" type="text" name="street" size="20">
+            <h4>Street:</h4>
+            <input class="typeahead form-control" type="text" name="street" autocomplete="off" placeholder="Street" size="20">
             <br>
             <br>
-            <h5>Neigborhood:</h5>
+            <h4>Neigborhood:</h4>
             
             <div class="form-group">
                 <input class="typeahead form-control" id="neighborhoods_search" type="text" autocomplete="off" placeholder="Neighborhood" name="neighborhood">
             </div>
             
-            <h5>Beat:</h5>
+            <h4>Beat:</h4>
             
             <div class="form-group">
                 <input class="typeahead form-control" id="beats_search" type="text" autocomplete="off" name="beat" placeholder="Beat">
@@ -149,8 +157,8 @@
             <hr>
             
             <div class="col-md-4">
-            <h3><u>Offense</u></h3>
-            <h5>Crime:</h5>
+            <h1><u>Offense</u></h1>
+            <h4>Crime:</h4>
             
             <select name="crime" style="width: 130px;">
                 <option value=""> </option>
@@ -167,15 +175,15 @@
             
             </br>
             </br>
-            <h5>Crime Type:</h5>
+            <h4>Crime Type:</h4>
             
             <div class="radio">
-                <label><input type="radio" name="crimetype" value="violent">Violent</label>
+                <label><input type="radio" name="crimetype" value="violent">&nbsp;Violent</label>
             </div>
             
             <div class="radio">
                 <label>
-                    <input type="radio" name="crimetype" value="non-violent">Non-violent
+                    <input type="radio" name="crimetype" value="non-violent">&nbsp;Non-violent
                 </label>
             </div>
             
@@ -185,7 +193,7 @@
                 </label>
             </div>
             
-            <h5>Number of Victims:</h5>
+            <h4>Number of Victims:</h4>
             
             <select name="numberofvict">
                 <option value="">Any</option>
@@ -201,10 +209,6 @@
             </br>
             
             </div>
-            </div>
-            <div class="text-center">
-                
-            <input type="submit" value="Search">
             </div>
             </div>
             

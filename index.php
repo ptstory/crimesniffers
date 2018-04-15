@@ -14,12 +14,61 @@
         <link rel="stylesheet" href="index_style.css" />
     </head>
     
-    <body style="background-color:lightblue">
+    <body>
         </br>
         <div align="center">
             <h1 style="font-family:arial;">Atlanta Crime Sniffers</h1>
             <img src='logo.png'>
         </div>
+
+          <div class="crime-summary-box mvxl">
+          <p class="h5 txtC">
+            Crime Trends in 2017
+          </p>
+<div class="crime-box crime-box-full-width backgroundLowlight pvl clearfix">
+                          <div class="crime-box-col floatLeft txtC brs">
+                <p class="h1 mbn typeEmphasize crime-text-0">22,948</p>
+                <p class="h7 mtn typeCaps typeEmphasize">TOTAL CRIMES REPORTED</p>
+              </div>
+                           <div class="crime-box-col floatLeft txtC brs ">
+                            <p class="h1 mbn typeEmphasize crime-text-4">September</p>
+                            <p class="h7 mtn typeCaps typeEmphasize">Highest Crime Month</p>
+              </div>
+                               <div class="crime-box-col floatLeft txtC brs ">
+                            <p class="h1 mbn typeEmphasize crime-text-4">Monday</p>
+                            <p class="h7 mtn typeCaps typeEmphasize">Highest Crime Day</p>
+              </div>
+                               <div class="crime-box-col floatLeft txtC brs ">
+                            <p class="h1 mbn typeEmphasize crime-text-4">705</p>
+                            <p class="h7 mtn typeCaps typeEmphasize">Highest Crime Beat</p>
+              </div>
+                          <div class="crime-box-col floatLeft txtC ">
+                            <p class="h1 mbn typeEmphasize crime-text-0">Downtown</p>
+                            <p class="h7 mtn typeCaps typeEmphasize">Highest Crime Neighborhood</p>
+              </div>
+           <div class="crime-box-col floatLeft txtC brs">
+             <p class="h1 mbn typeEmphasize crime-text-1">6 : 1</p>
+             <p class="h7 mtn typeCaps typeEmphasize">Non-Violent : Violent</p>
+              </div>
+           <div class="crime-box-col floatLeft txtC brs">
+                <p class="h1 mbn typeEmphasize crime-text-5">November</p>
+                <p class="h7 mtn typeCaps typeEmphasize">Lowest Crime Month</p>
+              </div>
+           <div class="crime-box-col floatLeft txtC brs">
+                <p class="h1 mbn typeEmphasize crime-text-5">Thursday</p>
+                <p class="h7 mtn typeCaps typeEmphasize">Lowest Crime Day</p>
+              </div>
+           <div class="crime-box-col floatLeft txtC brs">
+                <p class="h1 mbn typeEmphasize crime-text-5">612</p>
+                <p class="h7 mtn typeCaps typeEmphasize">Lowest Crime Beat</p>
+              </div>
+           <div class="crime-box-col floatLeft txtC brs">
+                <p class="h1 mbn typeEmphasize crime-text-1">Monday</p>
+             <p class="h7 mtn typeCaps typeEmphasize">Day Most Likely To Be A Victim of Larceny At GSU</p>
+              </div>
+                      </div>
+</div>
+
         
         </br>
         

@@ -12,16 +12,16 @@
           <table class="table tableHover tableRowBorderedTop tableRowBorderedBottom">
             <thead>
             <tr>
-              <th class="txtL">Offense ID</th>
-              <th class="txtL">Type</th>
-              <th class="txtL">Description</th>
-              <th class="txtL">Number of Victims</th>
-              <th class="txtL">Datetime</th>
-              <th class="txtL">Street Address</th>
-              <th class="txtL">Neighborhood</th>
-              <th class="txtL">Beat</th>
-              <th class="txtL">Latitude</th>
-              <th class="txtL">Longitude</th>
+              <th class="txtC">Offense ID</th>
+              <th class="txtC">Type</th>
+              <th class="txtC">Description</th>
+              <th class="txtC">Number of Victims</th>
+              <th class="txtC">Datetime</th>
+              <th class="txtC">Street Address</th>
+              <th class="txtC">Neighborhood</th>
+              <th class="txtC">Beat</th>
+              <th class="txtC">Latitude</th>
+              <th class="txtC">Longitude</th>
             </tr>
             </thead>
         <?php
@@ -133,7 +133,9 @@ if ($num_rows == 0) {
     echo "<div style='text-align:center'><h1> No results found</h1>";
     echo "<button class='btn btn-secondary btn-lg' onclick='history.go(-1);'>Back </button>";
 } else {
-    echo "<div style='text-align:center'><h1> Query Results: $num_rows </h1>";
+    // echo "<div style='text-align:center'><h1> Query Results: $num_rows </h1>";
+        echo "<div style='text-align:center'><h1> Query Results: $num_rows";
+        echo "&nbsp;&nbsp";
     echo "<button class='btn btn-secondary btn-lg' onclick='history.go(-1);'>Back </button>";
 
 }

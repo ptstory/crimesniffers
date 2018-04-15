@@ -109,6 +109,31 @@ p{margin-top:5px;margin-bottom:5px;}
 
 .crime-text-6{color:#ca432e;}
 
+.btn-background {background-color:#37718E;}
+.white {color:#ffffff;}
+
+.form-control-search { 
+margin: 0 auto; 
+width:950px;
+background-color: #f5f6f7;
+}
+
+.crime-box-full-width-fixed{
+  width: 1600px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.div-logo{
+  width: 1600px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #f5f6f7;
+  padding: 0;
+}
+
+body {background-color: #f5f6f7;}
+
 
 
 

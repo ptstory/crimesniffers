@@ -1,32 +1,29 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="/resources/css/results_style.css" />
+    <link rel="stylesheet" href="results_style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css" />
 
 </head>
 
 <body>
 
-    <div style="text-align:center" class="container">
-        
-        <!--<h1> Query Result </h1> 
-
-        <input type="button" onclick="location.href = 'index.php';" value="Back">
-        <br>
-    </div>-->
-    <table>
-        <tr>
-            <th> Offense Id </th>
-            <th> Type </th>
-            <th> Description </th>
-            <th> Number of Victims</th>
-            <th> Date Time</th>
-            <th> Street Address </th>
-            <th> Neighborhood </th>
-            <th> Beat </th>
-            <th> Latitude </th>
-            <th> Longitude </th>
-        </tr>
+        <div id="crimePaginated" class="crime-list">
+          <table class="table tableHover tableRowBorderedTop tableRowBorderedBottom">
+            <thead>
+            <tr>
+              <th class="txtC">Offense ID</th>
+              <th class="txtC">Type</th>
+              <th class="txtC">Description</th>
+              <th class="txtC">Number of Victims</th>
+              <th class="txtC">Datetime</th>
+              <th class="txtC">Street Address</th>
+              <th class="txtC">Neighborhood</th>
+              <th class="txtC">Beat</th>
+              <th class="txtC">Latitude</th>
+              <th class="txtC">Longitude</th>
+            </tr>
+            </thead>
         <?php
 include("config.php");
 
@@ -130,8 +127,19 @@ if( (empty($smonth)) && (empty($emonth)) && (empty($street))&& (empty($neighborh
 
 $result = mysql_query($sql);
 $num_rows = mysql_num_rows($result);
-
 $googlearray = array();
+
+if ($num_rows == 0) {
+    echo "<div style='text-align:center'><h1> No results found</h1>";
+    echo "<button class='btn btn-secondary btn-lg' onclick='history.go(-1);'>Back </button>";
+} else {
+    // echo "<div style='text-align:center'><h1> Query Results: $num_rows </h1>";
+        echo "<div style='text-align:center'><h1> Query Results: $num_rows";
+        echo "&nbsp;&nbsp";
+    echo "<button class='btn btn-secondary btn-lg' onclick='history.go(-1);'>Back </button>";
+
+}
+
 if(mysql_num_rows($result)>0) {
     while($row = mysql_fetch_assoc($result))
     {
@@ -172,7 +180,7 @@ $desc_datetime = $desc.' @ '.$datetime;
             <script>
                 var locations = <?php echo json_encode($googlearray); ?>;
             </script>
-            <div id="map" style="width: 500px; height: 400px;"></div>
+            <div id="map" style="width: 100%; height: 400px; margin: 0 auto 0 auto;"></div>
 
             <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAA4uxcbtLPte397r8rAHzo_PKe4w5rF4M"></script>
 

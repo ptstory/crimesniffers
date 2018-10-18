@@ -1,6 +1,9 @@
 h1 {
     text-align: center;
+    line-height: 7px;
+    padding: 7px 0;
 }
+
 table {
     width: 50%;
     margin-left: auto;
@@ -26,5 +29,10 @@ input[type=button] {
 }
 #map * {
     overflow:visible;
+    margin: 0 auto 0 auto;
 }
 img {max-width: initial !important;}
+
+.txtC { 
+    text-align: center
+}

@@ -1,0 +1,38 @@
+{
+  "name": "crimesniffers",
+  "version": "0.0.1",
+  "description": "Search and map Atlanta crime",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@mysql/xdevapi": "^8.0.12",
+    "config": "^1.30.0",
+    "dotenv": "6.1.0",
+    "express": "^4.13.3",
+    "mysql": "^2.16.0"
+  },
+  "engines": {
+    "node": "4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ptstory/crimesniffers"
+  },
+  "keywords": [
+    "apd",
+    "atlanta",
+    "gsu",
+    "crimesniffers",
+    "crime"
+  ],
+  "author": "Perry Story",
+  "contributors": [
+    "Keonhee Park <https://github.com/parkkeonhee>",
+    "Matt Rinoldo <https://github.com/mrinoldo>",
+    "Tyti Nguyen <https://github.com/tytinguyen>",
+    "Josh Jang <https://github.com/sjang5>"
+  ],
+  "license": "MIT"
+}

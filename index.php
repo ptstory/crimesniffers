@@ -75,6 +75,7 @@
         
         <!--<div class="container center_div" style="margin: 0 auto; width:50%; background-color:lightblue">-->
         <form action="results.php" class="form-control-search" method="post">
+
             
             <div class="row text-center">
                 <div class="col-md-4">

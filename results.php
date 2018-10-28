@@ -26,6 +26,17 @@
             </thead>
         <?php
 include("config.php");
+$host = "mysql-crimesniffers.cnurcb2fxz0x.us-east-2.rds.amazonaws.com";
+            $username = "admin";
+            $pwd = "crimesniffers123";
+            $db_name="crimesniffers";
+
+            $conn = mysqli_connect("$host", "$username", "$pwd");
+
+            if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
 
 $smonth = $_POST["smonth"];
 $emonth = $_POST["emonth"];
@@ -44,14 +55,16 @@ if($smonth > $emonth) {
     echo "</script>";
 }
 
-$sql = "SELECT crime.offense_id, category.type , type.description,crime.num_of_victims,timeframe.datetime, area.street_address, area.neighborhood, area.beat, coordinates.latitude, coordinates.longitude
-From crime
-JOIN type ON type.fk_type_crime_offense_id = crime.offense_id
-JOIN timeframe ON timeframe.fk_timeframe_crime_offense_id = crime.offense_id
-JOIN location ON location.location_crime_offense_id = crime.offense_id
-JOIN category ON category.fk_category_crime_offense_id = crime.offense_id
-JOIN area ON area.fk_area_location_location_id = location.location_id
-JOIN coordinates ON coordinates.fk_coordinates_location_location_id = location.location_id";
+$sql = "select * from crime";
+
+// $sql = "SELECT crime.offense_id, category.type , type.description,crime.num_of_victims,timeframe.datetime, area.street_address, area.neighborhood, area.beat, coordinates.latitude, coordinates.longitude
+// From crime
+// JOIN type ON type.fk_type_crime_offense_id = crime.offense_id
+// JOIN timeframe ON timeframe.fk_timeframe_crime_offense_id = crime.offense_id
+// JOIN location ON location.location_crime_offense_id = crime.offense_id
+// JOIN category ON category.fk_category_crime_offense_id = crime.offense_id
+// JOIN area ON area.fk_area_location_location_id = location.location_id
+// JOIN coordinates ON coordinates.fk_coordinates_location_location_id = location.location_id";
 
 if ( (!empty($smonth)) && (!empty($emonth)) ) {
     if(strpos($sql,'WHERE') == false) {
@@ -125,8 +138,10 @@ if( (empty($smonth)) && (empty($emonth)) && (empty($street))&& (empty($neighborh
         ORDER BY timeframe.datetime;";
 }
 
-$result = mysql_query($sql);
-$num_rows = mysql_num_rows($result);
+echo "<h1> $sql </h1>";
+$result = mysqli_query($conn, $sql);
+echo "<h1> $result </h1>";
+$num_rows = mysqli_num_rows($result);
 $googlearray = array();
 
 if ($num_rows == 0) {
@@ -140,8 +155,8 @@ if ($num_rows == 0) {
 
 }
 
-if(mysql_num_rows($result)>0) {
-    while($row = mysql_fetch_assoc($result))
+if(mysqli_num_rows($result)>0) {
+    while($row = mysqli_fetch_assoc($result))
     {
     $offid = $row["offense_id"];
     $type = $row["type"];

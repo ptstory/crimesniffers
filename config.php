@@ -18,7 +18,7 @@ echo 'Current PHP version: ' . phpversion();
 
             
             // $conn = mysqli_connect("$host", "$username", "$pwd");
-            $conn = mysql_connect("$host", "$username", "$pwd");
+            $conn = mysqli_connect("$host", "$username", "$pwd");
 
             /*
             mysql_select_db("$db_name");
@@ -33,7 +33,7 @@ echo 'Current PHP version: ' . phpversion();
             }
             */
 
-            mysql_select_db("$db_name");
+            mysqli_select_db($conn, "$db_name");
             // mysqli_select_db($conn, $db_name);
 
             
